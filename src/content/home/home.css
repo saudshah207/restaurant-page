@@ -1,0 +1,17 @@
+.banner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--standard-spacing);
+
+    align-items: center;
+
+    padding-inline: var(--standard-spacing);
+}
+
+.banner > * {
+    flex: 300px;
+}
+
+.banner-content > * {
+    margin-bottom: 1rem;
+}
