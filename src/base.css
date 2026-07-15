@@ -35,6 +35,8 @@
 
   border: none;
   border-radius: var(--standard-border-radius);
+
+  cursor: pointer;
 }
 
 a.button {
