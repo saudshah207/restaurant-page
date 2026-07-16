@@ -1,7 +1,9 @@
 import "./menu.css";
 
-function adjustMenuLayoutIfNeeded(event) {
+function adjustMenuLayoutIfNeeded() {
   const menuTableElement = document.querySelector("table");
+
+  if (!menuTableElement) return;
 
   const categoryHeaderElements = menuTableElement.querySelectorAll("th");
 
