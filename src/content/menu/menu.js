@@ -1,11 +1,7 @@
 import "./menu.css";
 
-function adjustMenuLayoutIfNeeded() {
-  const menuTableElement = document.querySelector("table");
-
-  if (!menuTableElement) return;
-
-  const categoryHeaderElements = menuTableElement.querySelectorAll("th");
+function adjustMenuLayoutIfNeeded(tableElement, categoryHeaderElements) {
+  if (!tableElement) return;
 
   if (document.documentElement.clientWidth < 425) {
     for (const header of categoryHeaderElements) {
@@ -46,6 +42,8 @@ export default function () {
 
   const menuTable = document.createElement("table");
 
+  const categoryHeaderElements = [];
+
   for (const category of Object.keys(menu)) {
     const categoryHeader = document.createElement("th");
 
@@ -53,6 +51,8 @@ export default function () {
     categoryHeader.rowSpan = menu[category].length + 1;
 
     categoryHeader.dataset.rowSpan = categoryHeader.rowSpan;
+
+    categoryHeaderElements.push(categoryHeader);
 
     let itemRow = document.createElement("tr");
     itemRow.append(categoryHeader);
@@ -72,7 +72,9 @@ export default function () {
     }
   }
 
-  window.addEventListener("resize", adjustMenuLayoutIfNeeded);
+  window.addEventListener("resize", () =>
+    adjustMenuLayoutIfNeeded(menuTable, categoryHeaderElements),
+  );
 
   return menuTable;
 }
