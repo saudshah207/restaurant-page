@@ -78,3 +78,5 @@ export default function () {
 
   return menuTable;
 }
+
+export { adjustMenuLayoutIfNeeded };
