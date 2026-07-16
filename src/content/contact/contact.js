@@ -8,6 +8,7 @@ function getInputField(id, type) {
     input.type = type;
   } else input = document.createElement("textarea");
 
+  input.required = true;
   input.name = id;
   input.id = id;
 
