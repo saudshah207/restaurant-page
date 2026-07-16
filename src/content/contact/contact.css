@@ -1,0 +1,52 @@
+form {
+  display: flex;
+  flex-direction: column;
+
+  gap: var(--standard-spacing);
+
+  --max-width: 500px;
+  max-width: var(--max-width);
+
+  padding-inline: var(--standard-spacing);
+
+  margin-inline: auto;
+}
+
+label {
+  display: flex;
+  justify-content: space-between;
+
+  flex-wrap: wrap;
+
+  --form-field-spacing: calc(var(--standard-spacing) / 2);
+  gap: var(--form-field-spacing);
+
+  --input-field-flex-basis: 250px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input,
+textarea {
+  appearance: none;
+
+  border: 1px solid var(--black);
+  border-radius: var(--standard-border-radius);
+}
+
+.label-text {
+  flex-basis: 8ch;
+}
+
+label > input,
+label > textarea {
+  flex: var(--input-field-flex-basis);
+
+  padding: var(--form-field-spacing);
+}
+
+label > input {
+  min-width: min(var(--input-field-flex-basis), 100%);
+}
